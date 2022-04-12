@@ -1,0 +1,376 @@
+% This is samplepaper.tex, a sample chapter demonstrating the
+% LLNCS macro package for Springer Computer Science proceedings;
+% Version 2.20 of 2017/10/04
+%
+\documentclass[runningheads]{llncs}
+
+\usepackage{amsmath} %for math formula
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+%
+\usepackage{graphicx}
+
+\usepackage[utf8]{inputenc} 
+
+\pagenumbering{roman} %add page numbers: %https://www.overleaf.com/learn/latex/Page_numbering
+
+% cells
+\usepackage{makecell}
+
+% Used for displaying a sample figure. If possible, figure files should
+% be included in EPS format.
+\usepackage{hyperref}
+\hypersetup{hidelinks,
+backref=true,
+pagebackref=true,
+hyperindex=true,
+breaklinks=true,
+colorlinks=true,%linkcolor=black,
+urlcolor=blue,
+citecolor={blue},
+bookmarks=true,
+bookmarksopen=false,
+pdftitle={Title},
+%pdfauthor={Author}
+}
+% If you use the hyperref package, please uncomment the following line
+% to display URLs in blue roman font according to Springer's eBook style:
+\renewcommand\UrlFont{\color{blue}\rmfamily}
+\renewcommand\UrlFont{\color{blue}\rmfamily\itshape}
+
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/url
+% Basically, \url{my_url_here}.
+
+%color
+\usepackage[dvipsnames]{xcolor}
+\pagecolor{pink}%set the page color to black
+\color{black}% set the default colour to white
+
+%comments
+\newif\ifshowcomment
+\showcommenttrue
+% \showcommentfalse % uncomment this to to disable comments
+\ifshowcomment
+\newcommand{\luyao}[1]{\textcolor{blue}{[luyao] #1}}
+\else
+\newcommand{\luyao}[1]{}
+\fi
+
+%bibliography
+\usepackage[numbers]{natbib}
+%reference: https://tex.stackexchange.com/questions/202963/how-to-cite-author-in-ieee-format
+%The natbib package provides three versions of the standard BibTeX bibliography styles compatible with author-year citations (\citet, \citeauthor, \citeyear):
+%1.plainnat
+%2.bbrvnat
+%3.unsrtnat
+
+\begin{document}
+%
+\title{A General Introduction to Game Theory: A Dichotomy Approach\thanks{Supported by Duke Kunshan University}}
+%
+%\titlerunning{Abbreviated paper title}
+% If the paper title is too long for the running head, you can set
+% an abbreviated paper title here
+%
+\author{Luyao Zhang\inst{1}}
+%
+\authorrunning{CS/Econ 206 Computational Microeconomics, Duke Kunshan University}
+% First names are abbreviated in the running head.
+% If there are more than two authors, 'et al.' is used.
+%
+\institute{Duke Kunshan University, Kunshan, Jiangsu 215316, China \\
+\email{lz183@duke.edul}\\
+\href{https://www.linkedin.com/in/sunshineluyao/}{\textit{\underline{LinkedIn}}}
+}
+%
+
+\maketitle              % typeset the header of the contribution
+%
+\begin{abstract}
+Submissions to Problem Set 1 for COMPSCI/ECON 206 Computational Microeconomics, 2022 Spring Term (Seven Week - Second) instructed by Prof. Luyao Zhang at Duke Kunshan University. \luyao{This is the version with general feedback.}
+\par
+\href{https://www.overleaf.com/learn/how-to/Hotkeys}{Overleaf Hotkeys}
+
+
+\keywords{computational economics  \and game theory \and innovative education.}
+\end{abstract}
+%
+%
+%
+\section{Part I: Self-Introduction (2 points)}
+\luyao{\textbf{comments}: Most of you did great for this part. However, for a better production quality, you must consider the following revisions.} 
+\begin{itemize}
+    \item Put all figures in a sub-folder for better files managements
+    \item Simplify the name/label of the figure file and keep it consistent with photo number and title. (no space and special characters)
+    \item Some of you used the comment function to change the default color, which is not conventional for general color changes
+    \item Check out more latex color functions here: using the~\href{https://www.overleaf.com/learn/latex/Using_colours_in_LaTeX}{xcolor} packages. You can see that I am playing with page and background colors
+\end{itemize}
+\noindent\luyao{\textbf{instructions}}
+
+\begin{itemize}
+    \item insert your professional photo with number, title, and labels
+    \item insert your short bio (around 100 words) 
+    \item make your name in a color that is not the default black
+\end{itemize}
+\luyao{\textbf{more hints}}
+Please try to avoid rasterized images for line-art diagrams and
+schemas. Whenever possible, use vector graphics instead.
+\newpage
+
+\luyao{\textbf{examples}}
+
+\begin{figure}
+\centering
+\includegraphics[width=4.7cm, height=5cm]{figs/fig1.jpg}
+\caption{Instructor: Luyao Zhang} \label{fig:1}
+\end{figure}
+
+
+\noindent \textbf{Short bio}: \textcolor{blue}{Luyao (Sunshine) Zhang} is Assistant Professor of Economics and Senior Research Scientist at the Data Science Research Center at Duke Kunshan University (DKU). She has an abiding passion for \textit{interdisciplinary collaborations}, especially those related to \textit{Computational Economics} (Algorithmic Game Theory and Mechanism Design), \textit{Artificial Intelligence} (Machine Learning, AI Trust, Human-Computer Interaction), \textit{Cryptoeconomics} (Blockchain for social good, DeFi, and Consensus Algorithms), \textit{Behavioral Science} (Bounded Rationality, Trust, and Cooperation), and \textit{Interdisciplinary Big Data} (Social Media, Sustainability, and Global Health). Her publications appear in economic journals for general interest and beyond, including \emph{American Economic Review: Papers and Proceedings}, \emph{the Review of Economics and Statistics, the World Economy}, \textit{Nature Scientific Data}, \emph{ACM CCS},  \textit{Remote Sensing}, \emph{Journal of Digital Earth}, \textit{Data and Information Management}, etc. (\href{https://scholars.duke.edu/person/luyao.zhang}{\underline{Source: Duke Scholar}})
+
+
+\section{Part II: Reflections on Game Theory (5 points)}
+\luyao{\textbf{comments}: For this part, you should experiment the 4 citation styles functions listed in the instruction.}
+
+\noindent\luyao{\textbf{instructions}}
+\begin{itemize}
+    \item describe the major milestones of game theory by citing the original authors' seminal publications. (around 150 words)
+    \item you must provide in-text citations by experimenting the following \href{https://tex.stackexchange.com/questions/202963/how-to-cite-author-in-ieee-format}{nabib package} functions:
+    \begin{itemize}
+        \item \cite{neumann_1947_theory}
+        \item \citet{neumann_1947_theory}
+        \item \citeauthor{neumann_1947_theory}
+        \item \citeyear{neumann_1947_theory}
+    \end{itemize}
+    \item you must have all citations in the end bibliography using the latex functions
+    \item you must have a .bib file uploaded that follows the \href{https://www.chicagomanualofstyle.org/tools_citationguide/citation-guide-2.html}{\textit{\underline{IEEE Style}}} strictly. 
+    \item you must have all in-text citation in hyperlink that directs us to the original source online. 
+\end{itemize}
+
+\newpage
+\luyao{\textbf{examples}}
+
+\begin{itemize}
+            \item \citeyear{vonneumann_1928_zur}: Game theory did not exist as a unique field until \citet{vonneumann_1928_zur} published the paper On the Theory of Games of Strategy in \citeyear{vonneumann_1928_zur}.\cite{vonneumann_1928_zur}
+            \item \citeyear{vonneumann_1944_theory}: The publication of the book "Theory of Games and Economic Behavior" by mathematician John von Neumann and economist Oskar Morgenstern by Princeton University Press, the groundbreaking text that crated the interdisciplinary research field of game theory.\cite{vonneumann_1944_theory}
+            \item \citeyear{nash_1951_noncooperative}: John F. \citeauthor{nash_1951_noncooperative}, Nobel Prize Laureates in 1994, introduced the distinction between cooperative games, in which binding agreement can be made, and non-cooperative games, where binding agreements are not feasible. Nash developed an equilibrium concepts for non-cooperative games that later came to be called Nash Equilibrium.\cite{nash_1951_noncooperative}
+            \item \citeyear{selten_1965_spieltheoretische}, Reinhard \citeauthor{selten_1965_spieltheoretische}: Nobel Prize Laureates in 1994, was the first to refine the Nash Equilibrium concept for analyzing dynamic strategic interaction. He has also applied these reined concepts to analyses of competition with only a few sellers.\cite{selten_1965_spieltheoretische}
+            \item \citeyear{harsanyi_1967_games}: John C. \citeauthor{harsanyi_1967_games}, Nobel Prize Laureates in 1994, showed how games of incomplete information can be analyzed, thereby providing a theoretical foundation for a lively field of research - the economics of information - which focuses on strategic situations where difference agents do not know each other's objectives.\cite{harsanyi_1967_games}
+            \item \citeyear{rj_1985_what}: Thomas C. Schelling Nobel Prize Laureates in \citeyear{rj_1985_what}, Schelling's work prompted new developments in game theory and accelerated its use and application throughout the social sciences.\cite{rj_1985_what}
+            \item \citeyear{rj_1985_what}: Robert J. Aumann, Nobel Prize Laureates in \citeyear{rj_1985_what}, Robert Aumann was the first to conduct a full-fledged formal analysis of so-called infinitely repeated games. His research identified exactly what outcomes can be upheld over time in long-run relations.\cite{rj_1985_what}
+
+        \end{itemize}
+
+\section{Part III: Nash Equilibrium: Definition, Theorem, and Proof (3 points)}
+
+\luyao{\textbf{comments}: For future endeavors, I suggest the following:}
+\begin{enumerate}
+    \item try to make the definitions concise and self-content
+    \item add formal in-text citations of textbook using the nabib package
+    \item add page numbers for any textbook or book citations (must mention chapter, pages, and the original definition/theorem number)
+    \item For more instructors, refer to \href{https://en.wikibooks.org/wiki/LaTeX}{https://en.wikibooks.org/wiki/LaTeX} and \href{https://en.wikibooks.org/wiki/LaTeX/Mathematics}{LaTeX/Mathematics}. For example, for most math functions to work, you need to import a package \textit{$\backslash$usepackage\{amsmath\}}, \textit{$\backslash$usepackage{amsfonts}}, and \textit{$\backslash$usepackage{amssymb}}
+    \item For how to stylize the real number symbol, refer to: \url{https://www.physicsread.com/latex-real-number/}
+\end{enumerate}
+
+
+\noindent\luyao{\textbf{instructions}}
+
+\begin{itemize}
+    \item provide the definition, theorem, and proof from the two text books (source must be cited) on Nash Equilibrium
+    \item you must utilize the headings of subsection, subsubsection, and paragraph to structure the section
+    \item you must use the definition, theorem, and proof environment
+    \item you must provide basic discussions to compare the definition, theorem, and proof 
+    \item you can refer to the instructions for more styling options:~\url{https://www.overleaf.com/learn/latex/Theorems_and_proofs}
+\end{itemize}
+
+
+
+\newpage
+\noindent\luyao{\textbf{examples}}
+\subsection{Nash Equilibrium: The definitions}
+\subsubsection{3.1.1. The Economist Perspectives}
+\paragraph{Refer to Textbook:} 
+\href{https://www.sciencedirect.com/science/article/pii/S0899825699907236}{\textit{\underline{Osborne, Martin J. and Ariel Rubinstein.}}}~
+\citeyear{osborne1994course}. A Course in Game Theory (Chapter 2, Page: 14, DEFINITION 14.1)
+
+\begin{definition}[Nash Equilibrium]
+A \textbf{Nash Equilibrium} of a strategic game $\langle\mathnormal{N}, \mathnormal{A_{i}},(\succeq_{i})\rangle$ is a profile $a^{*}\in\mathnormal{A}$ of actions with the property that for every player $i\in \mathnormal{N}$, we have:
+$$(a^{*}_{-i},a^{*}_{i}) \succeq_{i}(a^{*}_{-i},a_{i}), \forall \in \mathnormal{A_{i}}.$$
+And, a strategic game $\langle\mathnormal{N}, \mathnormal{A_{i}},(\succeq_{i})\rangle$  consist of:
+\begin{itemize}
+    \item a finite set $\mathnormal{N}$ as the set of players
+    \item for each player $i\in\mathnormal{N}$, a nonempty set $\mathnormal{A_{i}}$ as the set of actions available to player $i$
+    \item for each player $i\in\mathnormal{N}$, a preference relation $\succeq_{i}$ on $\mathnormal{A}=\times_{j\in \mathnormal{N}}\mathnormal{A}_{j}$
+\end{itemize}
+\end{definition}
+
+\subsubsection{3.1.2. The Computer Scientist Perspectives}
+
+\paragraph{Refer to Textbook:} 
+\href{http://www.masfoundations.org/mas.pdf}{\textit{\underline{Shoham, Yoav, and Kevin Leyton-Brown.}}} \citeyear{shoham2008multiagent}. Multiagent Systems: Algorithmic, Game-Theoretic, and Logical Foundations. Cambridge: Cambridge University Press. (Chapter 3, Page 62, Definition 3.3.4)
+\begin{definition}[Nash Equilibrium] A strategy profile $s^{*}=(s_{1}^{*},...,s_{n}^{*})\in S$ is a \textbf{Nash Equilibrium} of a normal for game $(\mathnormal{N}, \mathnormal{A}, \mu)$ if, $\forall$ agents $i$, $s_{i}^{*}$ is a best response to $s_{-i}^{*}$:
+
+$$\mu_{i}(s_{i}^{*},s_{-i}^{*}) \geq \mu_{i}(s_{i},s_{-i}^{*}), \forall -i.$$
+And a normal game $(\mathnormal{N}, \mathnormal{A}, \mu)$ consist of:
+\begin{itemize}
+    \item $\mathnormal{N}$, a finite set of $n$ players, indexed by $i$
+    \item $\mathnormal{A} =\mathnormal{A_{1}}\times ...\mathnormal{A_{n}}$, where $\mathnormal{A_{i}}$ is a finite set of actions available to player $i$. Each vector $a=(a_{1},...,a_{n})\in A$ is called an action profile; the set of mixed strategy for player $i$ is $S_{i}=\prod(A_{i})$, where for any set $X$, $\prod(X)$ denotes the set of all probability distributions over $X$
+    \item $\mu = (\mu_{1},...,\mu_{n})$ where $\mu_{i}: \mathnormal{A} \mapsto \mathbb{R} $
+\end{itemize}
+
+\end{definition}
+
+\subsection{Nash Equilibrium: The thereom}
+\subsubsection{3.1.1. The Economist Perspectives}
+\paragraph{Refer to Textbook:} 
+\href{https://www.sciencedirect.com/science/article/pii/S0899825699907236}{\textit{\underline{Osborne, Martin J. and Ariel Rubinstein.}}}~
+\citeyear{osborne1994course}. A Course in Game Theory (Chapter 3, Page: 33, Proposition 33.1)
+\begin{proposition}
+Every finite strategic game has a mixed strategy Nash Equilibrium.
+\end{proposition}
+\begin{proof}
+Let $G=\langle\mathnormal{N}, \mathnormal{A_{i}},(\succeq_{i})\rangle$ be a strategic game, and for each player $i$ let $m_{i}$ be the number of members of the set $A_{i}$. Then we can identify the set $\delta(A_{i})$ of player \textit{i}'s mixed strategy with the set of vectors $(p_{1},p_{m_{i}})$ for which $p_{k} geq 0 $ for all $k$ and $\sum_{k=1}^{m_i}p_{k}=1$ ($p_{k}$ being the probability with which player $i$ uses his $k$th pure strategy). This set is nonempty, convex, and compact. Since expected payoff is linear in the probabilities, each player's payoff function in the mixed extension of $G$ is both quasi-concave in his own strategy and continuous. Thus the mixed extension of $G$ satisfies all the requirements of Proposition 20.3.
+ \end{proof}
+
+
+\subsubsection{3.1.2. The Computer Scientist Perspectives}
+
+\paragraph{Refer to Textbook:} 
+\href{http://www.masfoundations.org/mas.pdf}{\textit{\underline{Shoham, Yoav, and Kevin Leyton-Brown.}}} \citeyear{shoham2008multiagent}. Multiagent Systems: Algorithmic, Game-Theoretic, and Logical Foundations. Cambridge: Cambridge University Press. (Chapter 3, Page 72, Theorem 3.3.22 (Nash 1951))
+\begin{theorem}
+Every game with a finite number of players and
+action profiles has at least one Nash equilibrium.
+\end{theorem}
+\begin{proof}
+Given a strategy profile $s \in S$, for all $i \in N$ and $a_i \in A_i$ we define $$ \varphi_{i,a_i} = max{(0,u_i(a_i, s_{-i}) - u_i(s))}. $$
+We then define the function $f : S \mapsto S$ by $f(s) = s^\prime$, where
+ $$s_i^\prime(a_i)=\frac{s_i(a_i)+\varphi_{i,a_i}(s)}{\sum_{b_i\in A_i}s_i(b_i)+\varphi_{i,b_i}(s)} $$
+$$ = \frac{s_i(a_i)+\varphi_{i,a_i}(s)}{1+\sum_{b_i\in A_i}+\varphi_{i,b_i}(s)}$$
+
+Intuitively, this function maps a strategy profile $s$ to a new strategy profile $s^\prime$
+in which each agent’s actions that are better responses to $s$ receive increased probability mass.
+\par
+The function $f$ is continuous since each $\varphi_{i,a_i}$ is continuous. Since $S$ is convex and compact and $f : S \mapsto S$, $f$ must have at least
+one fixed point. We must now show that the fixed points of $f$ are the Nash
+equilibria.
+\par
+First, if $s$ is a Nash equilibrium then all $\varphi$’s are $0$, making $s$ a fixed point of $f$.Conversely, consider an arbitrary fixed point of $f$, $s$. By the linearity of expectation
+there must exist at least one action in the support of $s$, say $a_i^\prime$, for
+which $u_{i,a_i^\prime(s)} \leq u_i(s)$. From the definition of $\varphi$, $\varphi_{i,a_i^\prime(s)}=0$. Since $s$ is a fixed point of $f$, $s_i^\prime(a_i^\prime)=s_i(a_i^\prime)$. Consider Equation (3.5), the expression
+defining $s_i^\prime(a_i^\prime)$. The numerator simplifies to $s_i(a_i^\prime)$, and is positive since
+$a_i^\prime$ is in $i$’s support. Hence the denominator must be $1$. Thus for any $i$ and
+$b_i\in A_i,\varphi_{i,b_i}(s)$ must equal $0$. From the definition of $\varphi$, this can occur only
+when no player can improve his expected payoff by moving to a pure strategy.
+Therefore, $s$ is a Nash equilibrium.
+\end{proof}
+
+\newpage
+\noindent\luyao{\textbf{more hints}}
+\subsection{A Subsection Sample}
+Please note that the first paragraph of a section or subsection is
+not indented. The first paragraph that follows a table, figure,
+equation etc. does not need an indent, either.
+
+Subsequent paragraphs, however, are indented.
+
+\subsubsection{Sample Heading (Third Level)} Only two levels of
+headings should be numbered. Lower level headings remain unnumbered;
+they are formatted as run-in headings.
+
+\paragraph{Sample Heading (Fourth Level)}
+The contribution should contain no more than four levels of
+headings. Table~\ref{tab1} gives a summary of all heading levels.
+
+\begin{definition}[Nash Equilibrium]
+type definition here
+\end{definition}
+
+\begin{theorem}
+This is a sample theorem. The run-in heading is set in bold, while
+the following text appears in italics. Definitions, lemmas,
+propositions, and corollaries are styled the same way.
+\end{theorem}
+%
+% the environments 'definition', 'lemma', 'proposition', 'corollary',
+% 'remark', and 'example' are defined in the LLNCS documentclass as well.
+%
+\begin{proof}
+Proofs, examples, and remarks have the initial word in italics,
+while the following text appears in normal font.
+\end{proof}
+
+
+
+\section{Part IV: Game Theory Glossary Tables (5 points)}
+\luyao{\textbf{comments}}:
+
+\luyao{\textbf{instructions}}
+\begin{itemize}
+    \item create a glossary table for the basic game theory glossaries by citing the original article 
+    \item you must cite the original publication that defines the glossaries (not the text books)
+    \item you must at least include the following glossaries: game theory, non-cooperative game theory, cooperative game theory, normal form game, extensive form game, Nash Equilibrium, Bayesian Nash Equlibrium, sub-game Perfect Nash Equlibrium, Perfect Nash Equlibrium
+\end{itemize}
+\luyao{\textbf{more hints}}
+\begin{table}
+\caption{Table captions should be placed above the
+tables.}\label{tab1}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Glossary} &  \textbf{Definition} & \textbf{Sources}\\
+\hline
+\makecell{Title (centered) \\ second line} &  {\Large\bfseries Lecture Notes} & 14 point, bold\\
+1st-level heading &  {\large\bfseries 1 Introduction} & 12 point, bold\\
+2nd-level heading & {\bfseries 2.1 Printing Area} & 10 point, bold\\
+3rd-level heading & {\bfseries Run-in Heading in Bold.} Text follows & 10 point, bold\\
+4th-level heading & {\itshape Lowest Level Heading.} Text follows & 10 point, italic\\
+\hline
+\end{tabular}
+\end{table}
+
+\newpage
+\noindent\luyao{\textbf{examples}}
+\begin{table}
+\centering
+\caption{Game Theory Glossary Tables}\label{tab1}
+\begin{tabular}{|c|c|c|}
+
+\hline
+\textbf{Glossary} &  \textbf{Definition} & \textbf{Sources}\\
+\hline
+{\bfseries Game Theory} & \makecell*[l]{Game theory is the study of mathematical models  \\of strategic interactions among rational agents.}  & \citet{myerson_1980_theory}\\
+
+{\bfseries \makecell{Non-comparative\\ Game Theory}}& \makecell*[l]{ Non-comparative Game Theory is a mixed-strategy \\Nash equilibrium for any game with a finite set of\\ actions and prove that atleast one  (mixed-strategy)\\ Nash equilibrium must exist in such a game.}  & \citet{Nash_1960_theory}\\
+
+{\bfseries \makecell{cooperative\\ Game Theory}}& \makecell*[l]{“A theory of n-person cooperative games… \\This theory is based on an analysis of the \\ interrelationships of the various coalitions which \\can be formed bythe players of the game”} & \citet{neumann_1947_theory}\\
+
+{\bfseries \makecell{ Normal \\form game}}& \makecell*[l]{ Normal form game is a much more simple special one,\\ which was nevertheless shown to be fully equivalent\\ to the former (extensive form).}  & \citet{neumann_1947_theory}\\
+
+{\bfseries \makecell{ Nash \\Equilibrium}}& \makecell*[l]{ A steady state of the play of a strategic game in\\ which each player holds the correctexpectation about \\ the other players’ behavior and acts rationally}  & \citet{nash_1951_noncooperative}\\
+
+{\bfseries \makecell{Bayesian Nash \\Equilibrium}}& \makecell*[l]{A strategy profile that maximizes the expected payoff \\for each player given their beliefs and given the \\strategies played by the other players}  & \citet{harsanyi_1967_games}\\
+
+{\bfseries \makecell{Sub-game Perfect \\Nash Equilibrium}}& \makecell*[l]{A strategy profile is a subgame perfectequilibrium  if\\ it represents a Nash equilibrium of every subgame of \\the original game}  & \citet{selten_1965_spieltheoretische}\\
+
+{\bfseries \makecell{Perfect \\Bayesian Equilibrium}}& \makecell*[l]{In a PBE, (P) the strategies form a Bayesian \\equilibrium for each continuation game, given the \\specified beliefs, and (B) beliefs are updated \\from period to period in accordance with Bayes\\ rule whenever possible, and satisfy a \\“no-signaling-what-you-don't-know” condition. }  & \citet{fudenberg1991perfect}\\
+
+{\bfseries \makecell{Evolutionary \\Bayesian Equilibrium}}& \makecell*[l]{studies players who adjust their strategies over time\\ according to rules that are not necessarily\\ rational or farsighted.}  & \citet{newton_2018}\\
+
+
+\hline
+\end{tabular}
+\end{table}
+
+% ---- Bibliography ----
+%
+% BibTeX users should specify bibliography style 'splncs04'.
+% References will then be sorted and formatted in the correct style.
+%
+\bibliographystyle{IEEEtranN}
+\bibliography{PS1}
+%
+
+\end{document}
