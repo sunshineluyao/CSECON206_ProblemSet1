@@ -225,7 +225,7 @@ And a normal game $(\mathnormal{N}, \mathnormal{A}, \mu)$ consist of:
 \end{definition}
 
 \subsection{Nash Equilibrium: The thereom}
-\subsubsection{3.1.1. The Economist Perspectives}
+\subsubsection{3.2.1. The Economist Perspectives}
 \paragraph{Refer to Textbook:} 
 \href{https://www.sciencedirect.com/science/article/pii/S0899825699907236}{\textit{\underline{Osborne, Martin J. and Ariel Rubinstein.}}}~
 \citeyear{osborne1994course}. A Course in Game Theory (Chapter 3, Page: 33, Proposition 33.1)
@@ -233,11 +233,11 @@ And a normal game $(\mathnormal{N}, \mathnormal{A}, \mu)$ consist of:
 Every finite strategic game has a mixed strategy Nash Equilibrium.
 \end{proposition}
 \begin{proof}
-Let $G=\langle\mathnormal{N}, \mathnormal{A_{i}},(\succeq_{i})\rangle$ be a strategic game, and for each player $i$ let $m_{i}$ be the number of members of the set $A_{i}$. Then we can identify the set $\delta(A_{i})$ of player \textit{i}'s mixed strategy with the set of vectors $(p_{1},p_{m_{i}})$ for which $p_{k} geq 0 $ for all $k$ and $\sum_{k=1}^{m_i}p_{k}=1$ ($p_{k}$ being the probability with which player $i$ uses his $k$th pure strategy). This set is nonempty, convex, and compact. Since expected payoff is linear in the probabilities, each player's payoff function in the mixed extension of $G$ is both quasi-concave in his own strategy and continuous. Thus the mixed extension of $G$ satisfies all the requirements of Proposition 20.3.
+Let $G=\langle\mathnormal{N}, \mathnormal{A_{i}},(\succeq_{i})\rangle$ be a strategic game, and for each player $i$ let $m_{i}$ be the number of members of the set $A_{i}$. Then we can identify the set $\delta(A_{i})$ of player \textit{i}'s mixed strategy with the set of vectors $(p_{1},p_{m_{i}})$ for which $p_{k} \geq 0 $ for all $k$ and $\sum_{k=1}^{m_i}p_{k}=1$ ($p_{k}$ being the probability with which player $i$ uses his $k$th pure strategy). This set is nonempty, convex, and compact. Since expected payoff is linear in the probabilities, each player's payoff function in the mixed extension of $G$ is both quasi-concave in his own strategy and continuous. Thus the mixed extension of $G$ satisfies all the requirements of Proposition 20.3.
  \end{proof}
 
 
-\subsubsection{3.1.2. The Computer Scientist Perspectives}
+\subsubsection{3.2.2. The Computer Scientist Perspectives}
 
 \paragraph{Refer to Textbook:} 
 \href{http://www.masfoundations.org/mas.pdf}{\textit{\underline{Shoham, Yoav, and Kevin Leyton-Brown.}}} \citeyear{shoham2008multiagent}. Multiagent Systems: Algorithmic, Game-Theoretic, and Logical Foundations. Cambridge: Cambridge University Press. (Chapter 3, Page 72, Theorem 3.3.22 (Nash 1951))
@@ -308,7 +308,7 @@ while the following text appears in normal font.
 \section{Part IV: Game Theory Glossary Tables (5 points)}
 \luyao{\textbf{comments}}:
 
-\luyao{\textbf{instructions}}
+\noindent\luyao{\textbf{instructions}}
 \begin{itemize}
     \item create a glossary table for the basic game theory glossaries by citing the original article 
     \item you must cite the original publication that defines the glossaries (not the text books)
@@ -341,23 +341,23 @@ tables.}\label{tab1}
 \hline
 \textbf{Glossary} &  \textbf{Definition} & \textbf{Sources}\\
 \hline
-{\bfseries Game Theory} & \makecell*[c]{Game theory is the study of mathematical models  \\of strategic interactions among rational agents.}  & \citet{myerson_1980_theory}\\
+{\bfseries Game Theory} & \makecell*[c]{Game theory is the study of mathematical models  \\of strategic interactions among rational agents.}  &\makecell{ \citeauthor{myerson_1980_theory}\\\cite{myerson_1980_theory}}\\
 
-{\bfseries \makecell{Non-comparative\\ Game Theory}}& \makecell*[c]{ Non-comparative Game Theory is a mixed-strategy \\Nash equilibrium for any game with a finite set of\\ actions and prove that atleast one  (mixed-strategy)\\ Nash equilibrium must exist in such a game.}  & \citet{Nash_1960_theory}\\
+{\bfseries \makecell{Non-comparative\\ Game Theory}}& \makecell*[c]{ Non-comparative Game Theory is a mixed-strategy \\Nash equilibrium for any game with a finite set of\\ actions and prove that atleast one  (mixed-strategy)\\ Nash equilibrium must exist in such a game.}  &\makecell{ \citeauthor{Nash_1960_theory}\\\cite{Nash_1960_theory}}\\
 
-{\bfseries \makecell{cooperative\\ Game Theory}}& \makecell*[c]{“A theory of n-person cooperative games… \\This theory is based on an analysis of the \\ interrelationships of the various coalitions which \\can be formed bythe players of the game”} & \citet{neumann_1947_theory}\\
+{\bfseries \makecell{cooperative\\ Game Theory}}& \makecell*[c]{“A theory of n-person cooperative games… \\This theory is based on an analysis of the \\ interrelationships of the various coalitions which \\can be formed bythe players of the game”} & \makecell{\citeauthor{neumann_1947_theory}\\\cite{neumann_1947_theory}}\\
 
-{\bfseries \makecell{ Normal \\form game}}& \makecell*[c]{ Normal form game is a much more simple special one,\\ which was nevertheless shown to be fully equivalent\\ to the former (extensive form).}  & \citet{neumann_1947_theory}\\
+{\bfseries \makecell{ Normal \\form game}}& \makecell*[c]{ Normal form game is a much more simple special one,\\ which was nevertheless shown to be fully equivalent\\ to the former (extensive form).}  & \makecell{\citeauthor{neumann_1947_theory}\\\cite{neumann_1947_theory}}\\
 
-{\bfseries \makecell{ Nash \\Equilibrium}}& \makecell*[c]{ A steady state of the play of a strategic game in\\ which each player holds the correctexpectation about \\ the other players’ behavior and acts rationally}  & \citet{nash_1951_noncooperative}\\
+{\bfseries \makecell{ Nash \\Equilibrium}}& \makecell*[c]{ A steady state of the play of a strategic game in\\ which each player holds the correctexpectation about \\ the other players’ behavior and acts rationally}  & \makecell{\citeauthor{nash_1951_noncooperative}\\\cite{nash_1951_noncooperative}}\\
 
-{\bfseries \makecell{Bayesian Nash \\Equilibrium}}& \makecell*[c]{A strategy profile that maximizes the expected payoff \\for each player given their beliefs and given the \\strategies played by the other players}  & \citet{harsanyi_1967_games}\\
+{\bfseries \makecell{Bayesian Nash \\Equilibrium}}& \makecell*[c]{A strategy profile that maximizes the expected payoff \\for each player given their beliefs and given the \\strategies played by the other players}  & \makecell{\citeauthor{harsanyi_1967_games}\\\cite{harsanyi_1967_games}}\\
 
-{\bfseries \makecell{Sub-game Perfect \\Nash Equilibrium}}& \makecell*[c]{A strategy profile is a subgame perfectequilibrium  if\\ it represents a Nash equilibrium of every subgame of \\the original game}  & \citet{selten_1965_spieltheoretische}\\
+{\bfseries \makecell{Sub-game Perfect \\Nash Equilibrium}}& \makecell*[c]{A strategy profile is a subgame perfectequilibrium  if\\ it represents a Nash equilibrium of every subgame of \\the original game}  & \makecell{\citeauthor{selten_1965_spieltheoretische}\\\cite{selten_1965_spieltheoretische}}\\
 
-{\bfseries \makecell{Perfect \\Bayesian Equilibrium}}& \makecell*[c]{In a PBE, (P) the strategies form a Bayesian \\equilibrium for each continuation game, given the \\specified beliefs, and (B) beliefs are updated \\from period to period in accordance with Bayes\\ rule whenever possible, and satisfy a \\“no-signaling-what-you-don't-know” condition. }  & \citet{fudenberg1991perfect}\\
+{\bfseries \makecell{Perfect \\Bayesian Equilibrium}}& \makecell*[c]{In a PBE, (P) the strategies form a Bayesian \\equilibrium for each continuation game, given the \\specified beliefs, and (B) beliefs are updated \\from period to period in accordance with Bayes\\ rule whenever possible, and satisfy a \\“no-signaling-what-you-don't-know” condition. }  & \makecell{\citeauthor{fudenberg1991perfect}\\\cite{fudenberg1991perfect}}\\
 
-{\bfseries \makecell{Evolutionary \\Bayesian Equilibrium}}& \makecell*[c]{studies players who adjust their strategies over time\\ according to rules that are not necessarily\\ rational or farsighted.}  & \citet{newton_2018}\\
+{\bfseries \makecell{Evolutionary \\Bayesian Equilibrium}}& \makecell*[c]{studies players who adjust their strategies over time\\ according to rules that are not necessarily\\ rational or farsighted.}  & \makecell{\citeauthor{newton_2018}\\\cite{newton_2018}}\\
 
 
 \hline
